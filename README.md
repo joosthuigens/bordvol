@@ -22,7 +22,7 @@ Website voor Bordvol — gezonde, smaakvolle feestlunches en borrelplanken in We
 - [x] Pricing De Fitte Borrelplank — €17,50 p.p. (vanaf 6 pers.)
 - [x] Copy-stem — elegant/professioneel, "je"-vorm, ambacht-gericht
 - [ ] Instagram-handle @bordvol — nog niet bevestigd of dit account echt bestaat/actief is
-- [ ] Domein bordvol.fit — registratie afronden
+- [x] Domein bordvol.fit - registratie afronden
 - [ ] Foto van Joost voor de Over ons-sectie
 - [ ] E-mailadres — bewust nog niet toegevoegd (WhatsApp-only voor nu)
 
