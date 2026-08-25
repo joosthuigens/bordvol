@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bordvol — Lekkere & fitte feestlunches en borrelplanken voor Weesp & Amsterdam</title>
 <meta name="description" content="Bordvol maakt fitte feestlunches en borrelplanken die ook gewoon heel lekker zijn — vers bereid voor Weesp en Amsterdam. Ook wekelijkse en maandelijkse abonnementen voor kantoren.">
+<link rel="canonical" href="https://bordvol.fit/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bordvol.fit/">
+<meta property="og:title" content="Bordvol — Fitte feestlunches en borrelplanken voor Weesp & Amsterdam">
+<meta property="og:description" content="Fitte feestlunches en borrelplanken die vooral heel lekker zijn — vers bereid voor Weesp en Amsterdam. Ook abonnementen voor kantoren.">
+<meta property="og:locale" content="nl_NL">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bordvol — Fitte feestlunches en borrelplanken voor Weesp & Amsterdam">
+<meta name="twitter:description" content="Fitte feestlunches en borrelplanken die vooral heel lekker zijn — vers bereid voor Weesp en Amsterdam.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -293,14 +305,64 @@
   @media (max-width: 760px) {
     .cards, .step-grid, .about-grid { grid-template-columns: 1fr; }
     nav { display: none; }
+
+    .wrap { padding: 0 20px; }
+
+    .hero { padding: 48px 0 40px; }
+
+    .eyebrow {
+      display: block;
+      max-width: 280px;
+      margin: 0 auto 16px;
+      line-height: 1.4;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 9vw, 2.6rem);
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      margin-bottom: 26px;
+    }
+
+    .cta-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .cta-row .btn {
+      text-align: center;
+      width: 100%;
+    }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Bordvol",
+  "url": "https://bordvol.fit/",
+  "description": "Bordvol maakt fitte feestlunches en borrelplanken voor Weesp en Amsterdam — vers bereid, met aandacht voor smaak en voeding.",
+  "telephone": "+31653616116",
+  "areaServed": [
+    { "@type": "City", "name": "Weesp" },
+    { "@type": "City", "name": "Amsterdam" }
+  ],
+  "priceRange": "€€",
+  "sameAs": [
+    "https://instagram.com/bordvol"
+  ]
+}
+</script>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="logo">Bordvol</div>
+    <a href="#" class="logo">Bordvol</a>
     <nav>
       <a href="#over-ons">Over ons</a>
       <a href="#aanbod">Aanbod</a>
@@ -313,7 +375,7 @@
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Ambachtelijk voor Weesp & Amsterdam</span>
+    <span class="eyebrow">Lekker en fit eten voor Weesp & Amsterdam</span>
     <h1>Vol bord. Vol voeding.</h1>
     <p>Bordvol bereidt feestlunches en borrelplanken met evenveel aandacht voor smaak als voor voeding. Ambachtelijk gemaakt, met vakmanschap en een balans van eiwitten en vezels die je niet snel tegenkomt bij een gewone groepsbestelling.</p>
     <div class="cta-row">
