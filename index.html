@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bordvol — Lekkere & fitte feestlunches en borrelplanken voor Weesp & Amsterdam</title>
+<meta name="description" content="Bordvol maakt fitte feestlunches en borrelplanken die ook gewoon heel lekker zijn — vers bereid voor Weesp en Amsterdam. Ook wekelijkse en maandelijkse abonnementen voor kantoren.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aubergine: #3B1F2B;
+    --aubergine-dark: #2A1620;
+    --cream: #F7EEDC;
+    --mustard: #E0A62C;
+    --herb: #7C9473;
+    --rust: #B5562F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--aubergine-dark);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    color: var(--aubergine-dark);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    padding: 28px 0;
+  }
+  header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--aubergine-dark);
+  }
+  nav {
+    display: flex;
+    gap: 28px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  nav a { opacity: 0.8; transition: opacity 0.2s; }
+  nav a:hover { opacity: 1; }
+
+  /* Hero */
+  .hero {
+    padding: 64px 0 56px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-style: italic;
+    max-width: 780px;
+    margin: 0 auto 22px;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin: 0 auto 32px;
+    opacity: 0.88;
+  }
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    transition: transform 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: var(--mustard);
+    color: var(--aubergine-dark);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--aubergine-dark);
+    border: 1.5px solid var(--aubergine-dark);
+  }
+
+  /* Scallop divider */
+  .scallop {
+    width: 100%;
+    height: 32px;
+    display: block;
+  }
+
+  /* Offer section */
+  .offer {
+    padding: 72px 0;
+  }
+  .offer > .wrap > h2 {
+    text-align: center;
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .offer > .wrap > p.sub {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 48px;
+    opacity: 0.8;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .business {
+    background: rgba(59, 31, 43, 0.04);
+  }
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card h3 {
+    font-size: 1.4rem;
+    font-style: italic;
+  }
+  .card p { opacity: 0.85; font-size: 0.98rem; }
+  .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .badge {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+  .badge.protein { background: rgba(181, 86, 47, 0.12); color: var(--rust); }
+  .badge.fiber { background: rgba(124, 148, 115, 0.15); color: var(--herb); }
+  .badge.taste { background: rgba(224, 166, 44, 0.2); color: #8a5f14; }
+  .card .price {
+    margin-top: auto;
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(59,31,43,0.1);
+  }
+  .card .price span { font-weight: 600; }
+  .price-info { display: flex; flex-direction: column; gap: 2px; }
+  .card .price .price-min { font-size: 0.78rem; font-weight: 400; opacity: 0.6; }
+  .card .price a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--rust);
+  }
+
+  /* About */
+  .about {
+    padding: 72px 0;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .about-photo {
+    aspect-ratio: 1;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--mustard), var(--herb));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    color: var(--aubergine-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.85;
+  }
+  .about-text h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    font-style: italic;
+    margin-bottom: 18px;
+  }
+  .about-text p {
+    margin-bottom: 14px;
+    opacity: 0.88;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
+
+  /* How it works */
+  .steps {
+    background: rgba(59, 31, 43, 0.04);
+    padding: 72px 0;
+  }
+  .steps h2 {
+    text-align: center;
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    font-style: italic;
+    margin-bottom: 48px;
+  }
+  .step-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .step-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--mustard);
+    margin-bottom: 10px;
+  }
+  .step h4 { font-size: 1.1rem; margin-bottom: 8px; }
+  .step p { font-size: 0.95rem; opacity: 0.8; }
+
+  /* Interest CTA */
+  .interest {
+    padding: 80px 0;
+    text-align: center;
+  }
+  .interest h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto 16px;
+  }
+  .interest p {
+    max-width: 480px;
+    margin: 0 auto 32px;
+    opacity: 0.85;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--aubergine-dark);
+    color: var(--cream);
+    padding: 40px 0;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer .brand { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; }
+  footer .links { display: flex; gap: 20px; font-size: 0.9rem; opacity: 0.85; }
+
+  @media (max-width: 760px) {
+    .cards, .step-grid, .about-grid { grid-template-columns: 1fr; }
+    nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Bordvol</div>
+    <nav>
+      <a href="#over-ons">Over ons</a>
+      <a href="#aanbod">Aanbod</a>
+      <a href="#zakelijk">Zakelijk</a>
+      <a href="#hoe-het-werkt">Hoe het werkt</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Ambachtelijk voor Weesp & Amsterdam</span>
+    <h1>Vol bord. Vol voeding.</h1>
+    <p>Bordvol bereidt feestlunches en borrelplanken met evenveel aandacht voor smaak als voor voeding. Ambachtelijk gemaakt, met vakmanschap en een balans van eiwitten en vezels die je niet snel tegenkomt bij een gewone groepsbestelling.</p>
+    <div class="cta-row">
+      <a href="#aanbod" class="btn btn-primary">Bekijk het aanbod</a>
+      <a href="https://wa.me/31653616116" class="btn btn-secondary">Stuur een appje</a>
+    </div>
+  </div>
+</section>
+
+<svg class="scallop" viewBox="0 0 1200 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,30 Q20,0 40,30 T80,30 T120,30 T160,30 T200,30 T240,30 T280,30 T320,30 T360,30 T400,30 T440,30 T480,30 T520,30 T560,30 T600,30 T640,30 T680,30 T720,30 T760,30 T800,30 T840,30 T880,30 T920,30 T960,30 T1000,30 T1040,30 T1080,30 T1120,30 T1160,30 T1200,30 L1200,0 L0,0 Z" fill="#2A1620"/>
+</svg>
+
+<section class="about" id="over-ons">
+  <div class="wrap about-grid">
+    <div class="about-photo">Foto van Joost volgt binnenkort</div>
+    <div class="about-text">
+      <h2>Over Bordvol</h2>
+      <p>Ik ben geen opgeleide kok, maar een amateurchef met een oprechte liefde voor koken. Jarenlang deed ik dat onder de naam Om op te eten: huis-aan-huis diners, waarbij ik voor mensen thuis een avond lang een volledig op maat gemaakt menu samenstelde. Elke tafel een nieuw verhaal, elke avond een ander gezelschap.</p>
+      <p>Wat me daarvan het meest is bijgebleven, is niet het menu zelf — het is het moment waarop mensen de eerste hap namen en je aan hun gezicht kon zien dat het klopte. Dát is waarom ik kook: om mensen blij te maken met iets dat ze ook daadwerkelijk goed doet. Die passie is nooit weggeweest, en ik wil hem met zoveel mogelijk mensen delen.</p>
+      <p>Met Bordvol doe ik dat op een nieuwe manier. Alles maak ik nog steeds zelf, met dezelfde aandacht en hetzelfde ambacht als vroeger — nu in de vorm van feestlunches en borrelplanken voor Weesp en Amsterdam. Het uitgangspunt is simpel: het moet allereerst heel lekker zijn. Dat het ook rijk is aan eiwitten en vezels, is een mooie bijkomstigheid — geen compromis, maar een bonus.</p>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="aanbod">
+  <div class="wrap">
+    <h2>Wat we maken</h2>
+    <p class="sub">Twee vaste opties, altijd vers bereid — geen eindeloos aanpasbaar menu, wel elke keer goed.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Fit Feestlunches</h3>
+        <p>Een feestelijke lunch, zorgvuldig samengesteld voor verjaardagen, bedrijfsbijeenkomsten en andere gelegenheden die om kwaliteit vragen. Vers bereid, met een doordachte balans van eiwitten en vezels. De samenstelling wisselt met het seizoen.</p>
+        <div class="badges">
+          <span class="badge protein">Eiwitrijk</span>
+          <span class="badge fiber">Vezelrijk</span>
+        </div>
+        <div class="price">
+          <div class="price-info">
+            <span class="price-amount">Vanaf €19,50 p.p.</span>
+            <span class="price-min">vanaf 8 personen</span>
+          </div>
+          <a href="https://wa.me/31653616116">Bestel via WhatsApp</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>De Fitte Borrelplank</h3>
+        <p>Een verzorgde borrelplank voor elke gelegenheid — ambachtelijk samengesteld, met aandacht voor smaak en voedingswaarde in ieder onderdeel. De samenstelling wisselt met het seizoen.</p>
+        <div class="badges">
+          <span class="badge protein">Eiwitrijk</span>
+          <span class="badge fiber">Vezelrijk</span>
+        </div>
+        <div class="price">
+          <div class="price-info">
+            <span class="price-amount">Vanaf €17,50 p.p.</span>
+            <span class="price-min">vanaf 6 personen</span>
+          </div>
+          <a href="https://wa.me/31653616116">Bestel via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer business" id="zakelijk">
+  <div class="wrap">
+    <h2>Voor kantoren & vaste klanten</h2>
+    <p class="sub">Vaste levering, geen gedoe — voor teams die het structureel goed willen hebben.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Wekelijkse Kantoorlunch</h3>
+        <p>Een vaste, verse lunch voor je kantoor — elke week opnieuw geleverd, met dezelfde zorg als een eenmalige bestelling.</p>
+        <div class="badges">
+          <span class="badge protein">Eiwitrijk</span>
+        </div>
+        <div class="price">
+          <div class="price-info">
+            <span class="price-amount">€17,50 p.p. per keer</span>
+            <span class="price-min">vanaf 8 personen · wekelijks geleverd</span>
+          </div>
+          <a href="https://wa.me/31653616116">Vraag een proefweek aan</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Maandelijkse Borrelplank</h3>
+        <p>Voor de vaste borrel op kantoor: iedere maand een verzorgde borrelplank, op tijd geleverd.</p>
+        <div class="badges">
+          <span class="badge fiber">Vezelrijk</span>
+        </div>
+        <div class="price">
+          <div class="price-info">
+            <span class="price-amount">€16,- p.p. per keer</span>
+            <span class="price-min">vanaf 6 personen · maandelijks geleverd</span>
+          </div>
+          <a href="https://wa.me/31653616116">Vraag een proefmaand aan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="hoe-het-werkt">
+  <div class="wrap">
+    <h2>Hoe het werkt</h2>
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Stuur je wensen</h4>
+        <p>Via WhatsApp of Instagram — laat weten wat je nodig hebt, voor hoeveel personen, en of er allergieën of dieetwensen zijn waar we rekening mee moeten houden.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Wij bereiden alles vers</h4>
+        <p>Geen voorraad, geen diepvries — alles wordt vers gemaakt voor jouw bestelling.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Ophalen of laten bezorgen</h4>
+        <p>In Weesp en Amsterdam. Gratis bezorgd vanaf 10 personen — daaronder rekenen we €7,50 bezorgkosten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="interest" id="contact">
+  <div class="wrap">
+    <h2>Benieuwd? Laat het weten.</h2>
+    <p>Bestel bij voorkeur een week van tevoren, via WhatsApp — neem gerust contact op als het sneller moet.</p>
+    <div class="cta-row">
+      <a href="https://wa.me/31653616116" class="btn btn-primary">WhatsApp</a>
+      <a href="https://instagram.com/bordvol" class="btn btn-secondary">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Bordvol</div>
+    <div class="links">
+      <span>Weesp & Amsterdam</span>
+      <a href="https://wa.me/31653616116">WhatsApp</a>
+      <a href="https://instagram.com/bordvol">@bordvol</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
